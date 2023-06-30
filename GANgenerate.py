@@ -58,8 +58,8 @@ def make_discriminator():
 generator = make_generator()
 disc = make_discriminator()
 
-generator.load_weights('/home/maciej/Desktop/Czarna dziura/PROJEKTY MACIEJA/AI/car_creator/gan_data/generator')
-disc.load_weights('/home/maciej/Desktop/Czarna dziura/PROJEKTY MACIEJA/AI/car_creator/gan_data/discriminator')
+generator.load_weights('gan_data/generator')
+disc.load_weights('gan_data/discriminator')
 
 photo = []
 
@@ -81,7 +81,7 @@ def generate():
     canvas.itemconfig(cont,image=photo)
 
 ws = tk.Tk()
-ws.title('PythonGuides')
+ws.title('Generator')
 ws.geometry('512x512')
 
 canvas = tk.Canvas(

@@ -138,11 +138,11 @@ def train(dataset, epochs):
             img = generator(noise).numpy()
             img = (img + 1.)*0.5
             plt.imshow(img[0])
-            plt.savefig('/home/maciej/Desktop/Czarna dziura/PROJEKTY MACIEJA/AI/car_creator/training_preview/epoch'+str(epoch))
-            generator.save_weights('/home/maciej/Desktop/Czarna dziura/PROJEKTY MACIEJA/AI/car_creator/gan_data/generator')
-            disc.save_weights('/home/maciej/Desktop/Czarna dziura/PROJEKTY MACIEJA/AI/car_creator/gan_data/discriminator')
+            plt.savefig('training_preview/epoch'+str(epoch))
+            generator.save_weights('gan_data/generator')
+            disc.save_weights('gan_data/discriminator')
 
-#generator.load_weights('/home/maciej/Desktop/Czarna dziura/PROJEKTY MACIEJA/AI/car_creator/gan_data/generator')
-#disc.load_weights('/home/maciej/Desktop/Czarna dziura/PROJEKTY MACIEJA/AI/car_creator/gan_data/discriminator')
-ds = load_data('/home/maciej/Desktop/Czarna dziura/PROJEKTY MACIEJA/AI/car_creator/car')
+#generator.load_weights('gan_data/generator')
+#disc.load_weights('gan_data/discriminator')
+ds = load_data('car')
 train(ds, 5000)
